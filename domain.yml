@@ -1,0 +1,90 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- ask_eat_healty
+- ask_lower_stress
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- ask_exercise
+- inform
+- out_of_scope
+- thankyou
+
+slots:
+  confirm_exercise:
+    type: unfeaturized
+  exercise:
+    type: unfeaturized
+  sleep:
+    type: unfeaturized
+  diet:
+    type: unfeaturized
+  stress:
+    type: unfeaturized
+  goal:
+    type: unfeaturized
+
+entities:
+  - exercise
+  - sleep
+  - stress
+
+responses:
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_stress_info:
+  - text: It's ok to feel overwhelmed at times. Try to set realistisch expectations
+  utter_exercise_info:
+  - text: Most adults should aim at 150 mins of moderate exercise per week
+  utter_diet_info:
+  - text: 'A healthy diet includes fruits, veggies, whole grains, etc. '
+  utter_greet:
+  - text: "Hey, do you want to answer questions about your health?"
+  utter_ask_confirm_exercise:
+  - text: "Did you exercise yesterday?"
+  utter_ask_sleep:
+  - text: "How much did you sleep yesterday?"
+  utter_ask_exercise:
+  - text: "What kind of exercise did you do?"
+  utter_ask_diet:
+  - text: "Did you stick to the diet yesterday?"
+  utter_ask_stress:
+  - text: "Is your stress level low, medium or high?"
+  utter_ask_goal:
+  - text: "What do you want to accomplish?"
+  utter_slot_values:
+  - text: "Here's your daily wellness\n
+            - Exercised? {confirm_exercise}\n
+            - Type of exercise: { exercise }\n
+            - Sleep: {sleep}\n
+            - Stuck to healthy diet? {diet}\n
+            - Stress level: {stress}\n
+            - Goal: {goal}"
+  utter_no_worries:
+  - text: "No problem ;-)"
+  utter_ask_continue:
+  - text: "Sorry, I don't  quite understand. Do you want to continue?"
+
+forms:
+  - health_form
+
+actions:
+- utter_diet_info
+- utter_greet
+- utter_stress_info
+version: '2.0'
